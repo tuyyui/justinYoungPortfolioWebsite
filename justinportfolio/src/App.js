@@ -1,8 +1,7 @@
 
 import './App.css';
-import React, {useState, Fragment, useEffect} from 'react'
-import {AiFillCaretRight} from "react-icons/ai"
-import {GrStopFill} from "react-icons/gr"
+import React, {useState} from 'react'
+
 import AudioPlayer from './components/AudioPlayer';
 function App() {
   const current = new Date();
@@ -16,51 +15,7 @@ function App() {
   const [gitHubButtonVisibility, setGitHubButtonVisibility] = useState(false)
   const [userInformationSchema, setUserInformationSchema] = useState([]);
   const [currentSongPlaying, setCurrentSongPlaying] = useState("Press Play to listen to my playlist")
- // const data = new FormData(userInformationSchema)
-//  function generate_random_string(string_length){
-//   let random_string = '';
-//   let random_ascii;
-//   let ascii_low = 65;
-//   let ascii_high = 90
-//   for(let i = 0; i < string_length; i++) {
-//       random_ascii = Math.floor((Math.random() * (ascii_high - ascii_low)) + ascii_low);
-//       random_string += String.fromCharCode(random_ascii)
-//   }
-//   return random_string
-// }
-  // useEffect(() => {
-  //   fetch('https://jsonplaceholder.typicode.com/users')
-  //   .then(response => response.json())
-  //   .then(json => {
-    
-  //     json.map((user) => {
-  //       console.log("Testing")
-  //      setUserInformationSchema(state => [...state, ...userInformationSchema])
-  //     })
-  //   })
-  //   console.log("User information Schema")
-  //  fetch("https://dev.app.homecarepulse.com/Primary/?FlowId=7423bd80-cddb-11ea-9160-326dddd3e106&Action=api", {
-  //     method: 'post',
-  //     headers: {'Content-Type': 'application/json',
-  //               'Accept': 'application/json',
-  //             },
-  //     body: JSON.stringify({userInformationSchema})
-  //   })
-  //   .then(response => response.json())
-  //   .then(json => console.log(json))
-  // }, [])
-    
-    // fetch("https://dev.app.homecarepulse.com/Primary/?FlowId=7423bd80-cddb-11ea-9160-326dddd3e106&Action=api", {
-    //   method: 'post',
-    //   headers: {'Content-Type': 'application/json'},
-    //   body: JSON.stringify({userInformationSchema})
-    // })
-    // .then(response => response.json())
-    // .then(json => console.log(json))
-  // }, [])
-  // const [currentTime, setCurrentTime] = useState((currentdate) => {
-  //   currentdate = current.getTimezoneOffset()
-  // })
+
   function hideAboutText()
   {
     console.log(userInformationSchema)
@@ -174,16 +129,13 @@ function App() {
  
   
   <div class="font-serif inline-block font-medium text-right">
-    {/* <p>{console.log(currentTime)}</p> */}
+  
     <button disabled = {buttonVisibility && aboutMeButtonVisibility ? false : true} class=" disabled:opacity-50  hover:underline inline-block " onClick={() => changeSettings()}>Github</button>/<button disabled = {buttonVisibility && gitHubButtonVisibility ? false : true} class=" disabled:opacity-50  hover:underline inline-block " onClick={() => changeSettings()}>AboutMe</button>
     <p class="whitespace-nowrap">Current Position: Avonics Software Engineer</p>
     </div>
 
       </div>
   </div>
-  {/* <div class ="footer_audioplayer">
-    <AudioPlayer/>
-    </div> */}
     
   <div class ="footer">
   <AudioPlayer songName = {currentSongPlaying} setSongName = {setCurrentSongPlaying}/>

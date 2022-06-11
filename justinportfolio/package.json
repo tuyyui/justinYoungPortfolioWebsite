@@ -1,5 +1,6 @@
 {
   "name": "justinportfolio",
+  "homepage": "https://194.113.64.244:8090/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
